@@ -1,0 +1,32 @@
+spring:
+  mvc:
+    view:
+     prefix: /WEB-INF/jsp/
+     suffix: .jsp
+  jpa:
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLDialect
+      ddl-auto: none
+  datasource:
+    username: user # application-secrets.yml
+    password: password # application-secrets.yml
+    initialization-mode: always
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    Url: jdbc:mysql://localhost:3306/mydb
+ 
+
+server:
+  port: 8080
+        
+# set it false to disable swagger-ui
+#sort the API paths in order of their HTTP methods.
+springdoc:
+   swagger-ui:
+      enabled: true
+      operationsSorter: method
+

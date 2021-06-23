@@ -1,0 +1,54 @@
+bills sql stmt
+CREATE TABLE `bills` (
+  `ID` int DEFAULT NULL,
+  `Student_Id` int DEFAULT NULL,
+  `Amount` double NOT NULL,
+  KEY `par_ind` (`Student_Id`),
+  CONSTRAINT `fk_student` FOREIGN KEY (`Student_Id`) REFERENCES `students` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+//student table
+CREATE TABLE `students` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL,
+  `Amount` double NOT NULL,
+  PRIMARY KEY (`ID`)
+)
+
+//emp table
+CREATE TABLE `employee` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(50) NOT NULL,
+  `Password` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) 
+
+to insert data in bills
+INSERT INTO `mydb`.`bills`
+(`ID`,
+`Student_Id`,
+`Amount`)
+VALUES
+(<{ID: }>,
+<{Student_Id: }>,
+<{Amount: }>);
+//to insert data into employee table
+INSERT INTO `mydb`.`employee`
+(`ID`,
+`Name`,
+`Password`)
+VALUES
+(<{ID: }>,
+<{Name: }>,
+<{Password: }>);
+//to insert into student
+INSERT INTO `mydb`.`students`
+(`ID`,
+`Name`,
+`Amount`)
+VALUES
+(<{ID: }>,
+<{Name: }>,
+<{Amount: }>);
+
+
