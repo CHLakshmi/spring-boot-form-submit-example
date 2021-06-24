@@ -19,6 +19,6 @@ public class Bills {
     private int student_id;
 	
 	@Column
-	private double amount;
+	private int amount;
 }
 

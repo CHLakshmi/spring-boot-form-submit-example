@@ -5,7 +5,13 @@ import lombok.Data;
 @Data
 public class MatchBillResponse {
 
-	private int id;
+	private String id;
 	private String name;
-	private Double amount;
+	private String amount;
+	private String billId;
+	private String billStudentId;
+	private String billAmount;
+	private String status;
+	
+	
 }

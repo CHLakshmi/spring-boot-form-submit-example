@@ -18,9 +18,12 @@
   <table class="table table-striped">
     <thead>
 		<tr>
-			<th>id</th>
-			<th>name</th>
-			<th>amount</th>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Total Amount</th>
+			<th>Bill ID</th>
+			<th>Bill Amount</th>
+			<th>Status</th>
 		</tr>
     </thead>
       	<!-- loop over and print our customers -->
@@ -29,6 +32,9 @@
 					<td>${tempmatches.id}</td>
 					<td>${tempmatches.name}</td>
 					<td>${tempmatches.amount}</td>
+					<td>${tempmatches.billId}</td>
+					<td>${tempmatches.billAmount}</td>
+					<td>${tempmatches.status}</td>
 				</tr>
 		 </c:forEach>
   </table>

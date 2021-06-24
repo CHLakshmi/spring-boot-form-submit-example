@@ -24,7 +24,7 @@ public class ExcelService {
 	String filePath="D:\\Balance.xls";
 	
 	public void createExcel(List<MatchBillResponse> matchBills) {
-		String[] columns = {"Id", "Name", "Amount"};
+		String[] columns = {"Id", "Name", "TotalAmount", "BillID","BillAmount", "Status"};
 	    Workbook workbook = new HSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
 
         /* CreationHelper helps us create instances of various things like DataFormat, 
@@ -69,8 +69,17 @@ public class ExcelService {
             row.createCell(1)
                     .setCellValue(match.getName());
 
-            row.createCell(3)
+            row.createCell(2)
                     .setCellValue(match.getAmount());
+            
+            row.createCell(3)
+                    .setCellValue(match.getBillId());
+
+            row.createCell(4)
+                    .setCellValue(match.getBillAmount());
+
+            row.createCell(5)
+                    .setCellValue(match.getStatus());
         }
 
 
