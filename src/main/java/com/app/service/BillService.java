@@ -22,12 +22,6 @@ public class BillService {
 	@Autowired
 	BillsRepository repository;
 
-	public Bills getBills(Integer id) {
-		Optional<Bills> bill = repository.findById(id);
-		return bill.get();
-	}
-
-
 	public List<Bills> getAll() {
 		return repository.findAll();
 	}

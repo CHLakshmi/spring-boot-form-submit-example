@@ -12,13 +12,12 @@ import lombok.Data;
 public class Bills {
 
 	@Id
-	@Column
-	private int id;
+	private int bill_id;
 	
 	@Column
     private int student_id;
 	
 	@Column
-	private int amount;
+	private int bill_amount;
 }
 

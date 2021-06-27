@@ -20,6 +20,6 @@ public class Students {
 	private String name;
 	
 	@Column
-	private int amount;
+	private int Amount;
 }
 

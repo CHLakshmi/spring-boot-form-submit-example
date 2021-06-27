@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.model.Bills;
 import com.app.model.Employee;
@@ -65,6 +66,7 @@ public class MainController {
 	public String listBills(Model theModel) {
 		System.out.println("in bills list");
 		List<Bills> billList = billService.getAll();
+		System.out.println("bills"+billList);
 		theModel.addAttribute("bills", billList);
 		return "list-bills";
 	}
@@ -83,5 +85,13 @@ public class MainController {
 		excelService.createExcel(matchBills);
         theModel.addAttribute("matches", matchBills);        
 		return "match-bills";
+	}
+	
+	@GetMapping("/updateStudent")
+	public String showFormForUpdate(@RequestParam("id") int id,
+									Model theModel) throws Exception {
+		Students theStudent= studentService.getStudent(id);	
+		theModel.addAttribute("students", theStudent);
+		return "list-students";
 	}
 }
